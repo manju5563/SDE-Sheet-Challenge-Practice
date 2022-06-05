@@ -4,23 +4,27 @@ using namespace std;
 void setZeros(vector<vector<int>>&matrix){
     int index;
     for(int i=0;i<matrix.size();i++){
-        for(int j=0;j<matrix[i].size();i++){
+        for(int j=0;j<matrix[0].size();j++){
             if(matrix[i][j]==0){
                 index=i-1;
                 while(index>=0){
                     matrix[index][j]=-1;
+                    index--;
                 }
                 index=i+1;
                 while(index<matrix.size()){
                     matrix[index][j]=-1;
+                    index++;
                 }
                 index=j-1;
                 while(index>=0){
                     matrix[i][index]=-1;
+                    index--;
                 }
                 index=j+1;
-                while(index<matrix.size()){
+                while(index<matrix[0].size()){
                     matrix[i][index]=-1;
+                    index++;
                 }
 
             }
